@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.app.netflix.ui.getStarted.GetStarted
+import com.app.netflix.ui.signIn.Password
+import com.app.netflix.ui.signIn.PhoneNumber
 import com.app.netflix.ui.splash.Splash
 import com.app.netflix.ui.theme.NetflixTheme
 
@@ -26,8 +28,24 @@ fun App() {
             }
             composable("getStarted") {
                 GetStarted {
-                    //navController.navigate("phoneNumber")
+                    navController.navigate("phoneNumber")
                 }
+            }
+            composable("phoneNumber") {
+                PhoneNumber(onLoginSuccess = {
+                    navController.navigate("password")
+                }, onBackClick = {
+                    navController.navigateUp()
+                })
+            }
+            composable("password") {
+                Password(onChangeClick = {
+                    navController.navigateUp()
+                }, onBackClick = {
+                    navController.navigateUp()
+                }, onSignInClick = {
+                    navController.navigate("howProfileWorks")
+                })
             }
         }
     }
