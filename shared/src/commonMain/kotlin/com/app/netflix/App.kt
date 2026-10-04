@@ -1,22 +1,36 @@
 package com.app.netflix
 
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.app.netflix.ui.getStarted.GetStarted
 import com.app.netflix.ui.splash.Splash
 import com.app.netflix.ui.theme.NetflixTheme
-import org.jetbrains.compose.resources.painterResource
-
-import netflixclone.shared.generated.resources.Res
-import netflixclone.shared.generated.resources.compose_multiplatform
 
 @Composable
 @Preview
 fun App() {
+    val navController = rememberNavController()
     NetflixTheme {
-        GetStarted{}
+        NavHost(navController = navController, startDestination = "splash") {
+            composable("splash") {
+                Splash {
+                    navController.navigate("getStarted") {
+                        popUpTo("splash") {
+                            inclusive = true
+                        }
+                    }
+                }
+            }
+            composable("getStarted") {
+                GetStarted {
+                    //navController.navigate("phoneNumber")
+                }
+            }
+        }
     }
+
 }
 
