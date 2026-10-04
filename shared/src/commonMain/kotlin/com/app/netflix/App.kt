@@ -5,6 +5,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.app.netflix.ui.chooseProfile.ChooseProfile
 import com.app.netflix.ui.getStarted.GetStarted
 import com.app.netflix.ui.howProfileWorks.HowProfileWorks
 import com.app.netflix.ui.signIn.Password
@@ -50,11 +51,15 @@ fun App() {
             }
             composable("howProfileWorks") {
                 HowProfileWorks {
-                    //navController.navigate("chooseProfile")
+                    navController.navigate("chooseProfile")
+                }
+            }
+            composable("chooseProfile") {
+                ChooseProfile {
+
                 }
             }
         }
     }
-
 }
 
