@@ -69,6 +69,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.compottie)
             implementation(libs.compottie.resources)
+            implementation("tech.annexflow.compose:constraintlayout-compose-multiplatform:0.8.2")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
