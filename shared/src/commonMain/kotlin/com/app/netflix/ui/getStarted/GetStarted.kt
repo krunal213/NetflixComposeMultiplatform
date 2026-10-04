@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import com.app.netflix.ui.theme.NetflixTheme
 import netflixclone.shared.generated.resources.Res
 import netflixclone.shared.generated.resources.compose_multiplatform
 import netflixclone.shared.generated.resources.ic_netflix_banner
@@ -151,5 +152,7 @@ fun GetStarted(onGetStartedClick: () -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun GetStartedPreview() {
-    GetStarted {}
+    NetflixTheme {
+        GetStarted {  }
+    }
 }
