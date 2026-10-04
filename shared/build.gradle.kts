@@ -71,6 +71,7 @@ kotlin {
             implementation(libs.compottie.resources)
             implementation("tech.annexflow.compose:constraintlayout-compose-multiplatform:0.8.2")
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.10.0-beta01")
+            implementation("org.jetbrains.compose.material:material-icons-extended:1.7.0")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
